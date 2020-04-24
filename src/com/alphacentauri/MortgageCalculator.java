@@ -28,7 +28,8 @@ public class MortgageCalculator {
 
         System.out.println("Hello " + firstName + " " + lastName);
         System.out.println("Welcome to the Mortgage Calculator" +
-                "\nPlease provide the following details");
+                "\nPlease provide the following details" +
+                "\n------------------------------------");
     }
 
     private static void printMortgage(int principal, float annualInterest, byte years) {
