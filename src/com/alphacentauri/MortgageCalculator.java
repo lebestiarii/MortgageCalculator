@@ -10,13 +10,14 @@ public class MortgageCalculator {
     public static void main(String[] args) {
     // Greet User
         greetUser("Sam", "Cooper");
-    // Get principal
+
+    //  Principal
         int principal = (int) readNumber("Principal: ", 1000,1_000_000);
 
-    // Set Interest Rates
+    //  Interest Rates
         float annualInterest = (float) readNumber("Annual Interest Rate: ", 1, 30);
 
-    // Set Period of years
+    //  Period of years
         byte years = (byte) readNumber("Period (Years): ", 1, 30);
 
     // Print the outputs
@@ -73,11 +74,9 @@ public class MortgageCalculator {
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
         short numberOfPayments = (short)(years * MONTHS_IN_YEAR);
 
-        double mortgage = principal
+        return principal
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return mortgage;
     }
     public static double calculateBalance(
             int principal,
@@ -88,11 +87,9 @@ public class MortgageCalculator {
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
         short numberOfPayments = (short)(years * MONTHS_IN_YEAR);
 
-        double balance = principal
+        return principal
                 * (Math.pow(1 + monthlyInterest, numberOfPayments)
                 - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return balance;
     }
 }
